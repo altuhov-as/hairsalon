@@ -16,19 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-import mainapp.views as mainapp
-import masterapp.views as masterapp
+import orderapp.views as orderapp
 
-
-app_name = 'mainapp'
+app_name = 'orderapp'
 
 urlpatterns = [
-    path('', mainapp.index, name='index'),
-    path('gallery', mainapp.Gallery.as_view(), name='gallery'),
-    path('about', mainapp.about, name='about'),
-    path('contacts', mainapp.contacts, name='contacts'),
-    path('gallery/<int:pk>', mainapp.GalleryMaster.as_view(), name='gallery_master'),
-    path('gallery/category/<int:pk>', mainapp.GalleryCategoryService.as_view(), name='gallery_category_service'),
-    path('service', mainapp.ServiceCategoryPage.as_view(), name='service'),
-    path('price', mainapp.price, name='price'),
+    path('ddd', orderapp.get_service),
+
 ]

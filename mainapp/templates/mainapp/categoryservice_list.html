@@ -1,0 +1,24 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block conteiner %}
+    <section class="container services">
+        <h2 class="h2">Услуги салона</h2>
+        <div class="grid grid--3-cols">
+            {% for service in object_list %}
+                <a href="{% url 'mainapp:gallery_category_service' service.pk %}">
+
+                <div class="services-block">
+                    <img
+                            src="media/{{ service.photo }}"
+                            class="services-block-img"
+                            alt="photo"
+                    />
+                    <p class="service-description">{{ service.name }}</p>
+                </div>
+            {% endfor %}
+            </a>
+        </div>
+    </section>
+
+{% endblock %}

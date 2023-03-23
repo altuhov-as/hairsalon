@@ -23,6 +23,7 @@ urlpatterns = [
     path('auth/', include('authapp.urls'), name='authapp'),
     path('admin/', admin.site.urls),
     path('master/', include('masterapp.urls'), name='master'),
+    path('order/', include('orderapp.urls'), name='order'),
     path('social/', include('social_django.urls')),
 ]
 
